@@ -1,7 +1,7 @@
 [project]
 name = "chercher-plugin-epub"
-version = "0.1.0"
-description = "Chercher plugin for EPUB files"
+version = "0.1.1"
+description = "Chercher plugin that adds support for EPUB files."
 readme = "README.md"
 authors = [{ name = "dnlzrgz", email = "contact@dnlzrgz.com" }]
 license = "MIT"
