@@ -13,7 +13,7 @@ wheels = [
 
 [[package]]
 name = "chercher"
-version = "0.1.17"
+version = "0.1.20"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -23,14 +23,14 @@ dependencies = [
     { name = "pydantic-settings" },
     { name = "rich" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/66/57/e5992c9a0d6879001ea1c3299a928e805ec52977b275e32dab7470ea651c/chercher-0.1.17.tar.gz", hash = "sha256:5f6cec9f16bae4be5a292fd1dba0611f4201e0e755bda3502dd0735843422559", size = 23796, upload_time = "2025-04-25T08:43:25.434Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a9/82/503db1de1535ae6ec8e03d26e862e3b8f595672583a5bf35cf75b870b4b0/chercher-0.1.20.tar.gz", hash = "sha256:98a856a2a4f8edfe8df7ee8b64ff4064fee60468128b045b9ebb8ab86944d1bc", size = 24007, upload_time = "2025-04-28T10:31:32.249Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/99/43/f0ab82c892049a5f9feaa70e3662f17e8ec8bce2d7a28ee2ace5ead3d0fe/chercher-0.1.17-py3-none-any.whl", hash = "sha256:8ca82dcf6320ef6d83aa118ac2b2d22794ee2ef61e3177f56d43655ffe00a90b", size = 6515, upload_time = "2025-04-25T08:43:24.183Z" },
+    { url = "https://files.pythonhosted.org/packages/90/4b/537a18720e10b575c3ec2c15b816f0a06d32d73c52feae0d242600c08519/chercher-0.1.20-py3-none-any.whl", hash = "sha256:22c4d7a0aa156c3e088bded3c0b409405b4b93e068e9d102718a4c7f16b9e22c", size = 6564, upload_time = "2025-04-28T10:31:31.211Z" },
 ]
 
 [[package]]
 name = "chercher-plugin-epub"
-version = "0.1.5"
+version = "0.1.6"
 source = { virtual = "." }
 dependencies = [
     { name = "chercher" },

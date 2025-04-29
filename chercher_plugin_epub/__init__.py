@@ -1,6 +1,6 @@
 from pathlib import Path
 from typing import Generator
-from urllib.parse import urlparse
+from urllib.parse import urlparse, unquote
 import pymupdf
 from chercher import Document, hookimpl
 
@@ -10,7 +10,8 @@ pymupdf.JM_mupdf_show_errors = 0
 def normalize_uri(uri: str) -> Path:
     if uri.startswith("file://"):
         parsed_uri = urlparse(uri)
-        return Path(parsed_uri.path).resolve()
+        decoded_path = unquote(parsed_uri.path)
+        return Path(decoded_path).resolve()
 
     return Path(uri)
 
