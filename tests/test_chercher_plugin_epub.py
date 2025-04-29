@@ -7,16 +7,18 @@ from chercher import Document
 @pytest.fixture
 def sample_files():
     samples_dir = Path(__file__).parent / "samples"
-
     return [file.as_uri() for file in samples_dir.iterdir() if file.is_file()]
 
 
 def test_valid_file(sample_files):
     for uri in sample_files:
-        documents = ingest(uri=uri)
+        documents = list(ingest(uri=uri))
+        assert documents != []
+
         for doc in documents:
             assert isinstance(doc, Document)
             assert doc.uri == uri
+            assert doc.body != ""
 
 
 def test_invalid_file(tmp_path):
