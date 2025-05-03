@@ -24,13 +24,15 @@ def ingest(uri: str) -> Generator[Document, None, None]:
 
     body = ""
     with pymupdf.open(path) as doc:
+        metadata = doc.metadata
         for page in doc:
             body += page.get_text()
 
     yield Document(
-        uri=uri,
+        uri=path.as_uri(),
+        title=metadata.get("title", ""),
         body=body,
-        metadata={},
+        metadata=metadata,
     )
 
 

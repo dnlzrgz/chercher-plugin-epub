@@ -18,7 +18,9 @@ def test_ingest_valid_file(sample_files):
         for doc in documents:
             assert isinstance(doc, Document)
             assert doc.uri == uri
+            assert doc.title != ""
             assert doc.body != ""
+            assert isinstance(doc.metadata, dict)
 
 
 def test_ingest_invalid_file(tmp_path):
