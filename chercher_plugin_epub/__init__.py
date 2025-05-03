@@ -32,3 +32,19 @@ def ingest(uri: str) -> Generator[Document, None, None]:
         body=body,
         metadata={},
     )
+
+
+@hookimpl()
+def prune(uri: str) -> bool | None:
+    if uri.startswith("file://"):
+        parsed_uri = urlparse(uri)
+        decoded_path = unquote(parsed_uri.path)
+        path = Path(decoded_path).resolve()
+    else:
+        return
+
+    if path.suffix != ".epub":
+        return
+
+    if not path.exists() or not path.is_file():
+        return True
